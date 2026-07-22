@@ -303,14 +303,20 @@ if arg:
         print(f"Rarest attribute found: {rarestatt[1]} (1/{rarestatt[0]})")
         exit()
     elif arg=="attributes":
-        thing = (userdiscovered, servdiscovered)
-        for m in thing:
-            attamt=len(m)
-            print(f"Discovered attributes: {attamt}/{len(attributes)}")
-            if len(attributes)==attamt:
-                print("All attributes discovered!")
-            attsort=sorted(m, key=attkey, reverse=True)
-            print(f"{attsort}")
+        attamt=len(userdiscovered)
+        print(f"Discovered attributes: {attamt}/{len(attributes)}")
+        if len(attributes)==attamt:
+            print("All attributes discovered!")
+        attsort=sorted(userdiscovered, key=attkey, reverse=True)
+        print(f"{attsort}")
+        exit()
+    elif arg=="servattributes":
+        attamt=len(servdiscovered)
+        print(f"Discovered attributes: {attamt}/{len(attributes)}")
+        if len(attributes)==attamt:
+            print("All attributes discovered!")
+        attsort=sorted(servdiscovered, key=attkey, reverse=True)
+        print(f"{attsort}")
         exit()
     elif arg=="showatt":
         if len(args)>1:
