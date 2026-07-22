@@ -288,18 +288,22 @@ if rolls > 86400:
     rolls = 86400
 
 b=[]
+attsfound = set({})
 discv=0
 for i in range(rolls):
     ball = genball()
     for l in ball[1:]:
+        attsfound.add(l)
         if not (l in userdiscovered):
             userdiscovered.append(l)
             discv+=1
-        
+   
     b.append(ball)
 def key(n):
     return n[0]
 b=sorted(b, key=key, reverse=True)
+attsfound=sorted(list(attsfound), key=attkey, reverse=True)
+top3att = attsfound[:3]
 
 top10=b[:10]
 top1=top10[0]
@@ -323,6 +327,9 @@ for i,ii in enumerate(top10):
     for g in ii[1:]:
         bt+=f"{g} "
     print(f"{i+1}. {bt}(1/"+"{:,})".format(int(ii[0]))) 
+print("Showing top 3 rarest attributes found:")
+for i,ii in enumerate(top3atts):
+    print(f"{i+1}. {ii} (1/{attributes[ii]})")
 if issrar: print("# *NEW SERVER BEST!*")
 elif isurar: print("## NEW USER BEST!")
 if discv:
