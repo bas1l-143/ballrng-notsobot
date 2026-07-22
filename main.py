@@ -330,9 +330,7 @@ if arg:
         else:
             print("No attribute provided.")
     elif arg=="g":
-        text = "g"
-        for i in range(16):
-            text+=text
+        text = "g" * 7777
         os.system(f"echo {text} > g.txt")
         exit()
         
