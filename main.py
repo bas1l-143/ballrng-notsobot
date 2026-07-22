@@ -258,7 +258,7 @@ if arg:
         print("Tag by: sd\\_.n\\_ - the code | afjap - a lot of attributes\nBased on balls.rng on roblox, inspired by the attrng tag by BonesYT.\nAn idle game where you roll for balls, which may have various attributes, from really common ones to extraordinarily rare ones.\nNot much else to say.")
         exit()
     elif arg=="help":
-        print("Usable arguments:\n`.t (tag) get` - prints user+server data. if you want to look at it then sure, but its mostly for debug purposes.\n`.t (tag) about` - info about the game\n`.t (tag) help` - <:g_:1501846104797352038>\n`.t (tag) stats` - shows your current stats and server stats.\n`.t (tag) attributes` - shows your discovered attributes.\n`.t (tag) showatt (attribute)` - shows the rarity of an attribute")
+        print("Usable arguments:\n`.t (tag) get` - prints user+server data. if you want to look at it then sure, but its mostly for debug purposes.\n`.t (tag) about` - info about the game\n`.t (tag) help` - <:g_:1501846104797352038>\n`.t (tag) stats` - shows your current stats and server stats.\n`.t (tag) [serv]attributes` - shows your (or entire server discovered if servattributes) discovered attributes.\n`.t (tag) showatt (attribute)` - shows the rarity of an attribute")
         exit()
     elif arg=="stats":
         print("## User stats:")
