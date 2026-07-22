@@ -77,7 +77,6 @@ attributes={
 "DIVORCED!!!!": 12398,
 "Sentient": 14500,
 "Popular": 16384,
-"Alien": 19999,
 "Bright": 22222,
 "Dark": 22222,
 "Expensive": 25000,
