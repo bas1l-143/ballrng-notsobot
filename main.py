@@ -228,15 +228,21 @@ servdata = discord["storage"]["server"]
 userrarest = data.get("rarestball", "1,Ball")
 userdiscovered = data.get("discovered", "Ball")
 servrarest = servdata.get("rarestball", "1,Ball")
+servdiscovered = servdata.get("discovered", "Ball")
 # because of nsb saving i do it this way, fuck you nsb
 userrarest=userrarest.split(",")
 servrarest=servrarest.split(",")
 userdiscovered=userdiscovered.split(",")
+servdiscovered=servdiscovered.split(",")
 
 for j in userdiscovered[:]:
     if not (j in attributes):
         userdiscovered.remove(j)
-        
+
+for j in servdiscovered[:]:
+    if not (j in attributes):
+        servdiscovered.remove(j)
+
 userrarest[0]=int(userrarest[0])
 servrarest[0]=int(servrarest[0])
 
@@ -261,6 +267,13 @@ if arg:
             rball+=f"{b} "
         rball += "(1/{:,})".format(int(userrarest[0])) 
         print(f"Rarest ball: {rball}")
+        da,ho,mi,se=secondstodhms(round(time.time()-userlast))
+        timetext=""
+        if da: timetext+=f"{da}d{ho}h{mi}m{se}s"
+        elif ho: timetext+=f"{ho}h{mi}m{se}s"
+        elif mi: timetext+=f"{mi}m{se}s"
+        else: timetext+=f"{se}s"
+        print(f"Current afk time: {timetext}")
         da,ho,mi,se=secondstodhms(usertime)
         timetext=""
         if da: timetext+=f"{da}d{ho}h{mi}m{se}s"
@@ -270,26 +283,35 @@ if arg:
         print(f"Total rolls: {usertime} ({timetext})")
         attamt=len(userdiscovered)
         print(f"Discovered attributes: {attamt}/{len(attributes)}")
-        da,ho,mi,se=secondstodhms(round(time.time()-userlast))
-        timetext=""
-        if da: timetext+=f"{da}d{ho}h{mi}m{se}s"
-        elif ho: timetext+=f"{ho}h{mi}m{se}s"
-        elif mi: timetext+=f"{mi}m{se}s"
-        else: timetext+=f"{se}s"
-        print(f"Current afk time: {timetext}")
+        rarestatt=(1, Ball)
+        for v in userdiscovered:
+            if attributes[v] > rarestatt[0]:
+                rarestatt=(attributes[v], v)
+        print(f"Rarest attribute found: {rarestatt[1]} (1/{rarestatt[0]})")
         print(f"## Server stats:")
         rball = ""
         for b in servrarest[1:]:
             rball+=f"{b} "
         rball += "(1/{:,})".format(int(servrarest[0])) 
         print(f"Rarest ball: {rball}")
+        attamt=len(servdiscovered)
+        print(f"Discovered attributes: {attamt}/{len(attributes)}")
+        rarestatt=(1, Ball)
+        for v in servdiscovered:
+            if attributes[v] > rarestatt[0]:
+                rarestatt=(attributes[v], v)
+        print(f"Rarest attribute found: {rarestatt[1]} (1/{rarestatt[0]})")
         exit()
     elif arg=="attributes":
-        attamt=len(userdiscovered)
+        qwqw=userdiscovered
+        if len(args)>1:
+            if arg[1] == "server":
+                qwqw = servdiscovered
+        attamt=len(qwqw)
         print(f"Discovered attributes: {attamt}/{len(attributes)}")
         if len(attributes)==attamt:
             print("All attributes discovered!")
-        attsort=sorted(userdiscovered, key=attkey, reverse=True)
+        attsort=sorted(qwqw, key=attkey, reverse=True)
         print(f"{attsort}")
         exit()
     elif arg=="showatt":
@@ -322,7 +344,9 @@ for i in range(rolls):
         if not (l in userdiscovered):
             userdiscovered.append(l)
             discv+=1
-   
+        if not (l in servdiscovered):
+            servdiscovered.append(l)
+            
     b.append(ball)
 def key(n):
     return n[0]
@@ -385,3 +409,4 @@ discord["storage"]["user"]["discovered"] = userdiscovered
 discord["storage"]["user"]["time"] = usertime+rolls
 # server data
 discord["storage"]["server"]["rarestball"] = servrarest
+discord["storage"]["server"]["discovered"] = servdiscovered
