@@ -106,7 +106,7 @@ attributes={
 "NEWater": 400000,
 "Rebranded": 420420,
 "Wistful": 500001,
-"green_apple:": 575109,
+":green_apple:": 575109,
 "Mephistophelian": 666666,
 "Unpleasant Gradient": 795350,
 "Free robux": 800008,
