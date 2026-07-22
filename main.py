@@ -328,7 +328,7 @@ for i,ii in enumerate(top10):
         bt+=f"{g} "
     print(f"{i+1}. {bt}(1/"+"{:,})".format(int(ii[0]))) 
 print("Showing top 3 rarest attributes found:")
-for i,ii in enumerate(top3atts):
+for i,ii in enumerate(top3att):
     print(f"{i+1}. {ii} (1/{attributes[ii]})")
 if issrar: print("# *NEW SERVER BEST!*")
 elif isurar: print("## NEW USER BEST!")
