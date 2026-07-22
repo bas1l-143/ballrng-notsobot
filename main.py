@@ -23,7 +23,7 @@ attributes={
 "Hinged": 75,
 "Sparkling": 89,
 "Big": 100,
-":100:": 100,
+"💯": 100,
 "Heavy": 133,
 "Sticky": 151,
 "Magnetic": 177,
@@ -108,7 +108,7 @@ attributes={
 "Rebranded": 420420,
 "Very Rare": 444444,
 "Wistful": 500001,
-":green_apple:": 575109,
+"🍏": 575109,
 "Mephistophelian": 666666,
 "Unpleasant Gradient": 795350,
 "Free robux": 800008,
@@ -196,6 +196,11 @@ servrarest = servdata.get("rarestball", "1,Ball")
 userrarest=userrarest.split(",")
 servrarest=servrarest.split(",")
 userdiscovered=userdiscovered.split(",")
+
+for j in userdiscovered[:]:
+    if not (j in attributes):
+        userdiscovered.remove(j)
+        
 userrarest[0]=int(userrarest[0])
 servrarest[0]=int(servrarest[0])
 
