@@ -307,7 +307,20 @@ if discv:
     print(f"You discovered {discv} new attributes!")
 if remain:
     print(f"Rolls per command are capped to 1 day of afk (86400 rolls), use this tag repeatedly to roll the remaining {remain} times.")
+
+rball = ""
+
+for b in userrarest[1:]:
+    rball+=f"{b} "
+rball += "(1/{:,})".format(int(userrarest[0])) 
+print(f"-# User rarest: {rball}")
+
+for b in servrarest[1:]:
+    rball+=f"{b} "
+rball += "(1/{:,})".format(int(servrarest[0])) 
+print(f"-# Server rarest: {rball}")
 print(f"-# Use `.t (tag) help` for the argument list.")
+
 # user data
 discord["storage"]["user"]["rarestball"] = userrarest
 discord["storage"]["user"]["last"] = time.time()-remain
