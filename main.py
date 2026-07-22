@@ -329,7 +329,10 @@ for i,ii in enumerate(top10):
     print(f"{i+1}. {bt}(1/"+"{:,})".format(int(ii[0]))) 
 print("Showing top 3 rarest attribute finds:")
 for i,ii in enumerate(top3att):
-    print(f"{i+1}. {ii} (1/{attributes[ii]})")
+    if ii == "DIVORCED!!!!":
+        print(f"{i+1}. [{ii}]" + r"(https://cdn.discordapp.com/attachments/1307066414531743846/1479243377169010729/ok_sooo_that_happened.mp4?ex=6a61ec00&is=6a609a80&hm=3da32bb1b2e4149e24b4fb6986062e18b1f2b2d6040b62d019d85c1b0f6aaa33&)" + "(1/{attributes[ii]})")
+    else:
+        print(f"{i+1}. {ii} (1/{attributes[ii]})")
 if issrar: print("# *NEW SERVER BEST!*")
 elif isurar: print("## NEW USER BEST!")
 if discv:
