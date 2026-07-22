@@ -125,7 +125,7 @@ attributes={
 "Lesopowal": 6666666,
 "Phantasmic": 7010107,
 "MRBEAST": 7777777,
-"Low Quality Tree": 8425425
+"Low Quality Tree": 8425425,
 "Supercalifragilisticexpialidocious": 9999999,
 "Lucidity": 10000000,
 "RNGdle": 12345678,
