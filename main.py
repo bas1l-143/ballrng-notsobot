@@ -238,6 +238,9 @@ servdiscovered=servdiscovered.split(",")
 for j in userdiscovered[:]:
     if not (j in attributes):
         userdiscovered.remove(j)
+        continue
+    if not (j in servdiscovered):
+        servdiscovered.append(j)
 
 for j in servdiscovered[:]:
     if not (j in attributes):
