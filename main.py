@@ -287,7 +287,7 @@ if arg:
         for v in userdiscovered:
             if attributes[v] > rarestatt[0]:
                 rarestatt=(attributes[v], v)
-        print(f"Rarest attribute found: {rarestatt[1]} (1/{rarestatt[0]})")
+        print(f"Rarest attribute found: {rarestatt[1]}" +  "(1/{:,})".format(rarestatt[0]))
         print(f"## Server stats:")
         rball = ""
         for b in servrarest[1:]:
@@ -300,7 +300,7 @@ if arg:
         for v in servdiscovered:
             if attributes[v] > rarestatt[0]:
                 rarestatt=(attributes[v], v)
-        print(f"Rarest attribute found: {rarestatt[1]} (1/{rarestatt[0]})")
+        print(f"Rarest attribute found: {rarestatt[1]}" +  "(1/{:,})".format(rarestatt[0]))
         exit()
     elif arg=="attributes":
         attamt=len(userdiscovered)
@@ -383,9 +383,9 @@ for i,ii in enumerate(top10):
 print("Showing top 3 rarest attribute finds:")
 for i,ii in enumerate(top3att):
     if ii == "DIVORCED!!!!":
-        print(f"{i+1}. [{ii}]" + r"(https://cdn.discordapp.com/attachments/1307066414531743846/1479243377169010729/ok_sooo_that_happened.mp4?ex=6a61ec00&is=6a609a80&hm=3da32bb1b2e4149e24b4fb6986062e18b1f2b2d6040b62d019d85c1b0f6aaa33&)" + f"(1/{attributes[ii]})")
+        print(f"{i+1}. [{ii}]" + r"(https://cdn.discordapp.com/attachments/1307066414531743846/1479243377169010729/ok_sooo_that_happened.mp4?ex=6a61ec00&is=6a609a80&hm=3da32bb1b2e4149e24b4fb6986062e18b1f2b2d6040b62d019d85c1b0f6aaa33&)" + " (1/{:,})".format(attributes[ii]))
     else:
-        print(f"{i+1}. {ii} (1/{attributes[ii]})")
+        print(f"{i+1}. {ii}" + " (1/{:,})".format(attributes[ii]))
 if issrar: print("# *NEW SERVER BEST!*")
 elif isurar: print("## NEW USER BEST!")
 if discv:
