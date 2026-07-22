@@ -305,7 +305,7 @@ if arg:
     elif arg=="attributes":
         qwqw=userdiscovered
         if len(args)>1:
-            if arg[1] == "server":
+            if arg[1].lower() == "server":
                 qwqw = servdiscovered
         attamt=len(qwqw)
         print(f"Discovered attributes: {attamt}/{len(attributes)}")
