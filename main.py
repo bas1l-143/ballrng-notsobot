@@ -329,11 +329,7 @@ if arg:
             exit()
         else:
             print("No attribute provided.")
-    elif arg=="g":
-        text = "g" * 7777
-        os.system(f"echo {text} > g.txt")
-        exit()
-        
+    
     print("Invalid argument.")
     exit()
     
