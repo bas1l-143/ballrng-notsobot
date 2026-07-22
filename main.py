@@ -331,7 +331,7 @@ if arg:
             print("No attribute provided.")
     elif arg=="g":
         text = "g"
-        for i in range(64):
+        for i in range(16):
             text+=text
         os.system(f"echo {text} > g.txt")
         exit()
