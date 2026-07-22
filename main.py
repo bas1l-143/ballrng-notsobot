@@ -149,8 +149,10 @@ attributes={
 "Necrotica": 510000000,
 "Stairway to Heaven": 650000000,
 "Elysium": 777777777,
-"Infinitude": 1000000000,
-"Initium Finis": 2500000000,
+"Stargate": 1250000000,
+"SuperPie": 3141592653,
+"Infinitude": 10000000000,
+"Initium Finis": 25000000000,
     
     
 }
