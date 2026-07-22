@@ -308,13 +308,13 @@ if discv:
 if remain:
     print(f"Rolls per command are capped to 1 day of afk (86400 rolls), use this tag repeatedly to roll the remaining {remain} times.")
 
-rball = ""
 
+rball = ""
 for b in userrarest[1:]:
     rball+=f"{b} "
 rball += "(1/{:,})".format(int(userrarest[0])) 
 print(f"-# User rarest: {rball}")
-
+rball = ""
 for b in servrarest[1:]:
     rball+=f"{b} "
 rball += "(1/{:,})".format(int(servrarest[0])) 
