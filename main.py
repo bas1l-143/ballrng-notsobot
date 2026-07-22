@@ -2,6 +2,7 @@
 
 import random
 import math
+import os
 import time
 args=discord["variables"]["__args"]
 if args:
@@ -328,6 +329,13 @@ if arg:
             exit()
         else:
             print("No attribute provided.")
+    elif arg=="g":
+        text = "g"
+        for i in range(64):
+            text+=text
+        os.system(f"echo {text} > g.txt")
+        exit()
+        
     print("Invalid argument.")
     exit()
     
