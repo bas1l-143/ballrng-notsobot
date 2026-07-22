@@ -283,7 +283,7 @@ if arg:
         print(f"Total rolls: {usertime} ({timetext})")
         attamt=len(userdiscovered)
         print(f"Discovered attributes: {attamt}/{len(attributes)}")
-        rarestatt=(1, Ball)
+        rarestatt=(1, "Ball")
         for v in userdiscovered:
             if attributes[v] > rarestatt[0]:
                 rarestatt=(attributes[v], v)
@@ -296,7 +296,7 @@ if arg:
         print(f"Rarest ball: {rball}")
         attamt=len(servdiscovered)
         print(f"Discovered attributes: {attamt}/{len(attributes)}")
-        rarestatt=(1, Ball)
+        rarestatt=(1, "Ball")
         for v in servdiscovered:
             if attributes[v] > rarestatt[0]:
                 rarestatt=(attributes[v], v)
