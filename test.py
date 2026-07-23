@@ -11,6 +11,9 @@ else:
     arg=None
 attributes={
 "Ball": 1,
+"Pyramid": 2,
+"Ball 2": 3,
+"Better": 4,
 "Cubed": 5,
 "Reflective": 8,
 "Colorful": 10,
@@ -430,7 +433,7 @@ if ttime > 86400:
     remain = ttime-86400
     ttime = 86400
     
-rolls = ttime*3
+rolls = ttime*10
 
 b=[]
 attsfound = set({})
