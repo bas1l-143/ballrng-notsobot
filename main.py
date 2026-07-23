@@ -462,7 +462,7 @@ if top1[0] > servrarest[0]:
     issrar=True
     servrarest=top1
 #
-da,ho,mi,se=secondstodhms(rolls)
+da,ho,mi,se=secondstodhms(ttime)
 timetext=""
 if da: timetext+=f"{da}d{ho}h{mi}m{se}s"
 elif ho: timetext+=f"{ho}h{mi}m{se}s"
