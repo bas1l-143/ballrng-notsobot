@@ -419,7 +419,16 @@ if arg:
             exit()
         else:
             print("No attribute provided.")
-    
+    elif arg=="topatts":
+        attsort=sorted(userdiscovered, key=attkey, reverse=True)
+        print("### Your top 5 discovered attributes:")
+        for yy in range(5):
+            print(f"{yy}. {attsort[yy]} (1/{attributes[attsort[yy]]})")
+        attsort=sorted(servdiscovered, key=attkey, reverse=True)
+        print("### Server top 5 discovered attributes:")
+        for yy in range(5):
+            print(f"{yy}. {attsort[yy]} (1/{attributes[attsort[yy]]})")
+        exit()
     print("Invalid argument.")
     exit()
     
