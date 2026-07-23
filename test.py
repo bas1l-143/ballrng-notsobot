@@ -1,5 +1,5 @@
 # hi code lurker
-ROLLRATE = 5
+ROLLRATE = 15
 import random
 import math
 import os
