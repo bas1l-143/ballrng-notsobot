@@ -229,7 +229,7 @@ attributes={
 "Chapelic": 75000000,
 "Mega Rare": 77777777,
 "Pondering": 80000000,
-"Pneumonoutramicroscopicsilicovolcanoconiosis": 85085085,
+"Pneumonoultramicroscopicsilicovolcanoconiosis": 85085085,
 "CommandErrorFile/home/notsocoder/script.py": 88000999,
 "Mysticism": 90755709,
 "Zany": 98765432,
