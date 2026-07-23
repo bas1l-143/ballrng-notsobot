@@ -426,9 +426,9 @@ if arg:
 ttime = round(time.time()-userlast)
 
 remain = 0
-if ttime > 86400:
-    remain = ttime-86400
-    ttime = 86400
+if ttime > 43200:
+    remain = ttime-43200
+    ttime = 43200
     
 rolls = ttime*3
 
@@ -485,7 +485,7 @@ elif isurar: print("## NEW USER BEST!")
 if discv:
     print(f"You discovered {discv} new attributes!")
 if remain:
-    print(f"Rolls per command are capped to 1 day of afk, use this tag repeatedly to roll the remaining {remain*3} ")
+    print(f"Rolls per command are capped to 12h of afk, use this tag repeatedly to roll the remaining {remain*3} ")
 
 
 rball = ""
