@@ -424,8 +424,8 @@ if arg:
             print("No attribute provided.")
     elif arg=="set":
         if len(args)>2:
-            discord["storage"]["user"][args[0]] = args[1]
-            print(discord["storage"]["user"][args[0]])
+            discord["storage"]["user"][args[1]] = args[2]
+            print(discord["storage"]["user"][args[1]])
             exit()
         else:
             print("nothin?")
