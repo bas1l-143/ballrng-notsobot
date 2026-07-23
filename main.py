@@ -24,8 +24,9 @@ attributes={
 "Outlined": 55,
 "Dented": 60,
 "Rotten": 67,
-"Fiery": 70
+"Fiery": 70, 
 "Hinged": 75,
+"Rare": 80,
 "Bouncy": 85,
 "Sparkling": 90,
 "Squished": 99,
