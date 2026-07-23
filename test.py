@@ -422,7 +422,18 @@ if arg:
             exit()
         else:
             print("No attribute provided.")
-    
+    elif arg=="set":
+        if len(args)>2:
+            if args[0] in data:
+                discord["storage"]["user"][arg[0]] = arg[1]
+                print(discord["storage"]["user"][arg[0]])
+                exit()
+            else:
+                print("wyd")
+                exit()
+        else:
+            print("nothin?")
+            exit()
     print("Invalid argument.")
     exit()
     
