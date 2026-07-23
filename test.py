@@ -1,5 +1,5 @@
 # hi code lurker
-
+ROLLRATE = 5
 import random
 import math
 import os
@@ -374,7 +374,7 @@ if arg:
         elif ho: timetext+=f"{ho}h{mi}m{se}s"
         elif mi: timetext+=f"{mi}m{se}s"
         else: timetext+=f"{se}s"
-        print(f"Total rolls: {usertime*3} ({timetext})")
+        print(f"Total rolls: {usertime*ROLLRATE} ({timetext})")
         attamt=len(userdiscovered)
         print(f"Discovered attributes: {attamt}/{len(attributes)}")
         rarestatt=(1, "Ball")
@@ -433,7 +433,7 @@ if ttime > 86400:
     remain = ttime-86400
     ttime = 86400
     
-rolls = ttime*10
+rolls = ttime*ROLLRATE
 
 b=[]
 attsfound = set({})
@@ -488,7 +488,7 @@ elif isurar: print("## NEW USER BEST!")
 if discv:
     print(f"You discovered {discv} new attributes!")
 if remain:
-    print(f"Rolls per command are capped to 1 day of afk, use this tag repeatedly to roll the remaining {remain*3} ")
+    print(f"Rolls per command are capped to 1 day of afk, use this tag repeatedly to roll the remaining {remain*ROLLRATE} ")
 
 
 rball = ""
