@@ -189,7 +189,7 @@ attributes={
 "Globular": 9000000,
 "Lustrous": 9250529,
 "The Attribute with a very long Name yes": 9500000,
-"Slow": 9876543
+"Slow": 9876543,
 "Supercalifragilisticexpialidocious": 9999999,
 "Lucidity": 10000000,
 "RNGdle": 12345678,
@@ -197,7 +197,7 @@ attributes={
 "Extractor": 18251800,
 "Atmoflux": 20000000,
 "Neutronic": 22500000,
-"Spacedust": 25025025
+"Spacedust": 25025025,
 "?": 27777777,
 "Ataxia": 29500000,
 "He hid for 30 years": 30000000,
