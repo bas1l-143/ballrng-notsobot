@@ -513,8 +513,16 @@ if issrar: print("# *NEW SERVER BEST!*")
 elif isurar: print("## NEW USER BEST!")
 if discv:
     print(f"You discovered {discv} new attributes!")
+    
 if remain:
-    print(f"Rolls per command are capped to 12h of afk, use this tag repeatedly to roll the remaining {remain*3} ")
+    da,ho,mi,se=secondstodhms(remain)
+    timetext=""
+    if da: timetext+=f"{da}d{ho}h{mi}m{se}s"
+    elif ho: timetext+=f"{ho}h{mi}m{se}s"
+    elif mi: timetext+=f"{mi}m{se}s"
+    else: timetext+=f"{se}s"
+    print(f"You were away for {timetext} and you rolled {rolls} times. Showing top 10 finds:")
+    print(f"## Rolls per command are capped to 12h of afk, _use this tag again_ to roll the remaining {remain*3} ({timetext}) rolls")
 
 
 rball = ""
