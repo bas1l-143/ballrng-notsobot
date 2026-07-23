@@ -284,8 +284,19 @@ attributes={
 "The Final Rare": 1000000000000,
 "g 2": 7777777777777777,
     
-    
 }
+
+sfxlinks=[
+(r"https://cdn.discordapp.com/attachments/1516038860474159227/1529888359835631616/1sp.mp4?ex=6a639310&is=6a624190&hm=15740976cabe5cc3034eb49ce0a24607d651087d46ab0618d29be398644e97ce&", 1000000000000000000000000),
+(r"https://cdn.discordapp.com/attachments/1516038860474159227/1529888360095547453/1sx.mp4?ex=6a639310&is=6a624190&hm=e768ef2a2869e907735abab49cf43aba96957fee337a5a4a869e454296c87f9e&", 1000000000000000000000),
+(r"https://cdn.discordapp.com/attachments/1516038860474159227/1529888359508348988/1qn.mp4?ex=6a639310&is=6a624190&hm=866fa3a35bc8a91cb2699426cca2e24c94326eec5507882e4e6a9e7ae6ca39e8&", 1000000000000000000),
+(r"https://cdn.discordapp.com/attachments/1516038860474159227/1529888359248560169/1qd.mp4?ex=6a639310&is=6a624190&hm=482f7a7da887408549914fa4e3a6a3a300767a017b97f817e8155cd418e832e8&", 1000000000000000),
+(r"https://cdn.discordapp.com/attachments/1516038860474159227/1529888360301072574/1t.mp4?ex=6a639311&is=6a624191&hm=9f770d523b4191e9003df34bf778b17135e803b3cc8dddbba3340af022e87134&", 1000000000000),
+(r"https://cdn.discordapp.com/attachments/1516038860474159227/1529888358841716957/1b.mp4?ex=6a639310&is=6a624190&hm=8f12bd178cba2def4717240927983d88b7df720051d094a8fc4cfd748a3efe16&", 1000000000),
+(r"https://cdn.discordapp.com/attachments/1516038860474159227/1529888359026135102/1m.mp4?ex=6a639310&is=6a624190&hm=4ee674432ff0dc3a0557bab099457ec2a7885a02db71b0fb3aba8d6e0dbc2544&", 1000000),
+(r"https://cdn.discordapp.com/attachments/1516038860474159227/1529888360603189459/100k.mp4?ex=6a639311&is=6a624191&hm=4492ac35ec4e712833ad303890d0e2ad081ec56ebc4be151ac83dd619f343bdc&", 100000),
+(r"https://cdn.discordapp.com/attachments/1516038860474159227/1529888358656901210/1.mp4?ex=6a639310&is=6a624190&hm=17ecbf22c741111038783d6491b439e0892159112f41b6058f66c4c6d22f4b20&", 1)
+]
 
 def attkey(n):
     return attributes[n]
@@ -478,11 +489,20 @@ elif ho: timetext+=f"{ho}h{mi}m{se}s"
 elif mi: timetext+=f"{mi}m{se}s"
 else: timetext+=f"{se}s"
 print(f"You were away for {timetext} and you rolled {rolls} times. Showing top 10 finds:")
+sfxth="(https://cdn.discordapp.com/attachments/1516038860474159227/1529888358656901210/1.mp4?ex=6a639310&is=6a624190&hm=17ecbf22c741111038783d6491b439e0892159112f41b6058f66c4c6d22f4b20&)"
+for bg in sfxlinks:
+    if top1[0] > bg[1]:
+        sfxth=f"({bg[0]})"
+        break
+        
 for i,ii in enumerate(top10):
     bt=""
     for g in ii[1:]:
         bt+=f"{g} "
-    print(f"{i+1}. {bt}(1/"+"{:,})".format(int(ii[0]))) 
+    if i == 0:
+        print(f"[{i+1}]{sfxth}. {bt}(1/"+"{:,})".format(int(ii[0]))) 
+    else:
+        print(f"{i+1}. {bt}(1/"+"{:,})".format(int(ii[0]))) 
 print("Showing top 3 rarest attribute finds:")
 for i,ii in enumerate(top3att):
     if ii == "DIVORCED!!!!":
