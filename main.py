@@ -26,8 +26,7 @@ attributes={
 "Rotten": 67,
 "Fiery": 70
 "Hinged": 75,
-"Bouncy": 80,
-"Watery": 85,
+"Bouncy": 85,
 "Sparkling": 90,
 "Squished": 99,
 "💯": 100,
