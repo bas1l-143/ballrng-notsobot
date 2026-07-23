@@ -371,7 +371,7 @@ if arg:
         elif ho: timetext+=f"{ho}h{mi}m{se}s"
         elif mi: timetext+=f"{mi}m{se}s"
         else: timetext+=f"{se}s"
-        print(f"Total rolls: {usertime} ({timetext})")
+        print(f"Total rolls: {usertime*3} ({timetext})")
         attamt=len(userdiscovered)
         print(f"Discovered attributes: {attamt}/{len(attributes)}")
         rarestatt=(1, "Ball")
@@ -424,11 +424,13 @@ if arg:
     exit()
     
 ttime = round(time.time()-userlast)
-rolls = round(time.time()-userlast)
+
 remain = 0
-if rolls > 86400:
-    remain = rolls-86400
-    rolls = 86400
+if ttime > 86400:
+    remain = ttime-86400
+    ttime = 86400
+    
+rolls = ttime*3
 
 b=[]
 attsfound = set({})
@@ -483,7 +485,7 @@ elif isurar: print("## NEW USER BEST!")
 if discv:
     print(f"You discovered {discv} new attributes!")
 if remain:
-    print(f"Rolls per command are capped to 1 day of afk (86400 rolls), use this tag repeatedly to roll the remaining {remain} times.")
+    print(f"Rolls per command are capped to 1 day of afk, use this tag repeatedly to roll the remaining {remain*3} ")
 
 
 rball = ""
@@ -502,7 +504,7 @@ print(f"-# Use `.t (tag) help` for the argument list.")
 discord["storage"]["user"]["rarestball"] = userrarest
 discord["storage"]["user"]["last"] = time.time()-remain
 discord["storage"]["user"]["discovered"] = userdiscovered
-discord["storage"]["user"]["time"] = usertime+rolls
+discord["storage"]["user"]["time"] = usertime+ttime
 # server data
 discord["storage"]["server"]["rarestball"] = servrarest
 discord["storage"]["server"]["discovered"] = servdiscovered
