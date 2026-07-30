@@ -521,7 +521,6 @@ if remain:
     elif ho: timetext+=f"{ho}h{mi}m{se}s"
     elif mi: timetext+=f"{mi}m{se}s"
     else: timetext+=f"{se}s"
-    print(f"You were away for {timetext} and you rolled {rolls} times. Showing top 10 finds:")
     print(f"## Rolls per command are capped to 12h of afk, _use this tag again_ to roll the remaining {remain*3} ({timetext}) rolls")
 
 
