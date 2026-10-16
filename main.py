@@ -324,10 +324,10 @@ def secondstodhms(time):
 data = discord["storage"]["user"]
 servdata = discord["storage"]["server"]
 
-userrarest = data.get("rarestball", "1,Ball").replace("[", "").replace("]", "").replace('"', "")
-userdiscovered = data.get("discovered", "Ball").replace("[", "").replace("]", "").replace('"', "")
-servrarest = servdata.get("rarestball", "1,Ball").replace("[", "").replace("]", "").replace('"', "")
-servdiscovered = servdata.get("discovered", "Ball").replace("[", "").replace("]", "").replace('"', "")
+userrarest = data.get("rarestball", "1,Ball").replace("[", "").replace("]", "").replace('"', "").replace('\\', "")
+userdiscovered = data.get("discovered", "Ball").replace("[", "").replace("]", "").replace('"', "").replace('\\', "")
+servrarest = servdata.get("rarestball", "1,Ball").replace("[", "").replace("]", "").replace('"', "").replace('\\', "")
+servdiscovered = servdata.get("discovered", "Ball").replace("[", "").replace("]", "").replace('"', "").replace('\\', "")
 
 # because of nsb saving i do it this way, fuck you nsb
 userrarest=userrarest.split(",")
